@@ -1,29 +1,30 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Blog from "./components/Blog";
-import Contact from "./components/Contact";
-import NotFound from "./components/NotFound";
+import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
+import Blog from "./components/Blog/Blog";
+import Contact from "./components/Contact/Contact";
+import NotFound from "./components/NotFound/NotFound";
+
 
 
 function App() {
   return (
     <div>
       <Router>
-        <Header/>
+        <Header></Header>
         <Switch>
           <Route path="/home">
-            <Home />
+            <Home/>
           </Route>
           <Route path="/blog">
-            
+            <Blog/>
           </Route>
           <Route path="/contact">
-            <Contact />
+            <Contact/>
           </Route>
           <Route exact path="/">
-            <Home />
+            <Home/>
           </Route>
           <Route path="*">
             <NotFound/>

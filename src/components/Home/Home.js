@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div>
             {
-                rider.map((rider) => {
+                riders.map((rider) => {
                     <Rider rider={rider} ></Rider>
                 })
             }
