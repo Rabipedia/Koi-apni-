@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router';
+import './Rider.css'
 
 const Rider = (props) => {
     console.log(props);
@@ -10,7 +11,7 @@ const Rider = (props) => {
         history.push(url);
     }
     return (
-        <div onClick={()=>handleRideClick(id)}>
+        <div onClick={()=>handleRideClick(id)} className='rider'>
             <img src={image} alt=""/>
             <h5>{name}</h5>
         </div>

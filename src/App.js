@@ -5,15 +5,22 @@ import Home from "./components/Home/Home";
 import Blog from "./components/Blog/Blog";
 import Contact from "./components/Contact/Contact";
 import NotFound from "./components/NotFound/NotFound";
+import Login from "./components/Login/Login";
+import { createContext } from "react";
+import { useState } from "react";
 
 
-
+export const UserContext = createContext();
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState([]);
   return (
-    <div>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Header></Header>
         <Switch>
+          <Route path="/login">
+            <Login/>
+          </Route>
           <Route path="/home">
             <Home/>
           </Route>
@@ -31,7 +38,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </div>
+    </UserContext.Provider>
   );
 }
 
