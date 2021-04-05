@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 
 const Rider = (props) => {
+    console.log(props);
     const {name, image, id} = props.rider;
     let history = useHistory()
     const handleRideClick = rideId => {

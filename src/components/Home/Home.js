@@ -1,23 +1,22 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import riderData from '../../RiderData/RiderData';
-import Rider from '../Rider/Rider';
+import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import riderData from "../../RiderData/RiderData";
+import Rider from "../Rider/Rider";
+import "./Home.css";
 
 const Home = () => {
-    const [riders, setRiders] = useState([]);
-    useEffect(()=> {
-        setRiders(riderData);
-    },[]);
-    return (
-        <div>
-            {
-                riders.map((rider) => {
-                    <Rider rider={rider} ></Rider>
-                })
-            }
-        </div>
-    );
+  const [riders, setRiders] = useState([]);
+  useEffect(() => {
+    setRiders(riderData);
+  }, []);
+  return (
+    <div className="rider-container">
+      {riders.map((rider) => (
+        <Rider key={rider.id} rider={rider}></Rider>
+      ))}
+    </div>
+  );
 };
 
 export default Home;
