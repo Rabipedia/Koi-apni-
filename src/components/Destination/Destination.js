@@ -8,7 +8,7 @@ import './Destination.css';
 
 
 const Destination = () => {
-    const { rideId } = useParams();
+    const { rideId} =useParams();
     console.log(rideId);
     const [destination, setDestination] = useState({
         pickFrom: '',
@@ -17,7 +17,7 @@ const Destination = () => {
     })
     const {pickFrom, pickTo, isReady} = destination;
     const rideInfo = riderData.find(rider => rider.id === rideId);
-    const [image, name, passenger, price] = rideInfo;
+    const {image, name, passenger, price} = rideInfo;
     
     const handleBlur = (event) => {
         const newDestination = {...destination};
