@@ -1,3 +1,23 @@
-.tempo img{
-    width: 25px
+.form-box {
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 350px;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+}
+.signIn-btn {
+    width: 350px;
+    border-radius: 10px;
+}
+.signIn-btn img{
+    width: 20px;
+}
+.user-form{
+    display: flex;
+    justify-content: center;
+}
+.button-container{
+    display: flex;
+    justify-content: center;
 }

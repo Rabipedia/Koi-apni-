@@ -8,6 +8,8 @@ import NotFound from "./components/NotFound/NotFound";
 import Login from "./components/Login/Login";
 import { createContext } from "react";
 import { useState } from "react";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Destination from "./components/Destination/Destination";
 
 
 export const UserContext = createContext();
@@ -30,6 +32,9 @@ function App() {
           <Route path="/contact">
             <Contact/>
           </Route>
+          <PrivateRoute>
+            <Destination/>
+          </PrivateRoute>
           <Route exact path="/">
             <Home/>
           </Route>

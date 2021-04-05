@@ -1,13 +1,17 @@
 import { faBus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { UserContext } from "../../App";
 
 const Header = () => {
-    let history = useHistory();
-    const handleClick = () => {
-        history.push('/login')
-    }
+  let history = useHistory();
+  const handleClick = () => {
+    history.push("/login");
+  };
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const { name } = loggedInUser;
   return (
     <nav className="container navbar navbar-expand-lg navbar-light">
       <div className="container-fluid">
@@ -36,9 +40,9 @@ const Header = () => {
               </Link>
             </li>
             <li className="nav-item">
-                <Link to="/ride/1bike" className="nav-link active">
-                    Destination
-                </Link>
+              <Link to="/ride/1bike" className="nav-link active">
+                Destination
+              </Link>
             </li>
             <li className="nav-item">
               <Link to="/blog" className="nav-link active">
@@ -50,10 +54,22 @@ const Header = () => {
                 Contact
               </Link>
             </li>
-
+            <li className="nav-item">
+              {name ? (
+                <Link to="" className="nav-link disabled">
+                  <strong className="text-dark">{name}</strong>
+                </Link>
+              ) : (
+                <button
+                  onClick={handleClick}
+                  className="nav-link btn btn-danger btn-lg text-white p-1"
+                >
+                  Login
+                </button>
+              )}
+            </li>
           </ul>
         </div>
-      
       </div>
     </nav>
   );
